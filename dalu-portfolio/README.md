@@ -14,7 +14,7 @@ This portfolio moves away from a previous neo-brutalist design toward something 
 
 It presents three lanes as one identity rather than forcing a single generic title:
 
-- **Build** — fullstack development (MERN + TypeScript)
+- **Build** — fullstack development (MERN+TypeScript)
 - **Design** — graphic design under Dalu GraphiXX
 - **Create** — content creation via Muny_memes
 
