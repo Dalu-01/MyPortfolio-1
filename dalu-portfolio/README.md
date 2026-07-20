@@ -2,7 +2,9 @@
 
 A minimalist, whitespace-driven personal portfolio for a multidisciplinary creator working across fullstack development, graphic design, and content creation.
 
-**Live site:** [add your deployed URL here]
+**Built with React · TypeScript · Tailwind CSS · Vite**
+
+<!-- **Live site:** [add your deployed URL here] -->
 
 ---
 
