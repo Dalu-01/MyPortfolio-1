@@ -1,30 +1,47 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 
 const CONTACT_LINES = [
-  { label: 'Email', value: 'unzuluel@gmail.com', href: 'mailto:unzuluel@gmail.com' },
-  { label: 'GitHub', value: 'Dalu-01', href: 'https://github.com/Dalu-01' },
+  {
+    label: "Email",
+    value: "unzuluel@gmail.com",
+    href: "mailto:unzuluel@gmail.com",
+  },
+  { label: "GitHub", value: "Dalu-01", href: "https://github.com/Dalu-01" },
   // { label: 'Design enquiries', value: 'Dalu GraphiX', href: '#' },
-  { label: 'Content', value: '@RobbyLoreDude', href: 'https://www.youtube.com/@RobbyLoreDude' },
-  { label: 'Facebook', value: 'DaluGraphiXX', href: 'https://web.facebook.com/DaluGraphiXX/' },
-]
+  {
+    label: "Content",
+    value: "@Mluememes",
+    href: "https://www.youtube.com/@Mluememes",
+  },
+  {
+    label: "Facebook",
+    value: "DaluGraphiXX",
+    href: "https://web.facebook.com/DaluGraphiXX/",
+  },
+];
 
 export function Contact() {
-  const [copiedLabel, setCopiedLabel] = useState<string | null>(null)
+  const [copiedLabel, setCopiedLabel] = useState<string | null>(null);
 
-  const handleCopy = async (e: React.MouseEvent, value: string, label: string, href: string) => {
+  const handleCopy = async (
+    e: React.MouseEvent,
+    value: string,
+    label: string,
+    href: string,
+  ) => {
     // Only stop navigation if it's a dummy link or a mailto link
-    if (href === '#' || href.startsWith('mailto:')) {
-      e.preventDefault()
+    if (href === "#" || href.startsWith("mailto:")) {
+      e.preventDefault();
     }
-    
+
     try {
-      await navigator.clipboard.writeText(value)
-      setCopiedLabel(label)
-      setTimeout(() => setCopiedLabel(null), 2000)
+      await navigator.clipboard.writeText(value);
+      setCopiedLabel(label);
+      setTimeout(() => setCopiedLabel(null), 2000);
     } catch (err) {
-      console.error('Failed to copy: ', err)
+      console.error("Failed to copy: ", err);
     }
-  }
+  };
 
   return (
     <section
@@ -44,9 +61,12 @@ export function Contact() {
         </h2>
       </div>
 
-      <div className="flex flex-col gap-6 pb-1 reveal" style={{ transitionDelay: '0.1s' }}>
+      <div
+        className="flex flex-col gap-6 pb-1 reveal"
+        style={{ transitionDelay: "0.1s" }}
+      >
         {CONTACT_LINES.map((line) => {
-          const isCopied = copiedLabel === line.label
+          const isCopied = copiedLabel === line.label;
 
           return (
             <div key={line.label} className="contact-line">
@@ -57,21 +77,24 @@ export function Contact() {
                 href={line.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={(e) => handleCopy(e, line.value, line.label, line.href)}
+                onClick={(e) =>
+                  handleCopy(e, line.value, line.label, line.href)
+                }
                 className={`text-ink hover:text-ink-2 no-underline transition-colors cursor-pointer select-none ${
-                  isCopied ? 'text-emerald-500 font-medium' : ''
+                  isCopied ? "text-emerald-500 font-medium" : ""
                 }`}
                 title="Click to copy and open link"
               >
-                {isCopied ? 'Copied!' : line.value}
+                {isCopied ? "Copied!" : line.value}
               </a>
             </div>
-          )
+          );
         })}
       </div>
     </section>
-  )
+  );
 }
+
 
 
 

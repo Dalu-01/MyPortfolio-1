@@ -1,10 +1,10 @@
 import { IoArrowForward } from "react-icons/io5";
 
 const STATS = [
-  { num: '3+', label: 'Years building' },
-  { num: '12+', label: 'Projects shipped' },
-  { num: '3', label: 'Creative lanes' },
-]
+  { num: "1.5+", label: "Years building" },
+  { num: "12+", label: "Projects shipped" },
+  { num: "3", label: "Creative lanes" },
+];
 
 export function Hero() {
   return (
@@ -14,12 +14,11 @@ export function Hero() {
     >
       <div className="pb-16 md:pb-24 reveal">
         <p className="eyebrow mb-7">Based in Lagos, Nigeria</p>
-        <h1 className="font-display text-[3.5rem] md:text-[6rem] leading-[1.0] tracking-tight text-ink mb-6">
-          I build,
+        <h1 className="text-[3.5rem] md:text-[6rem] leading-[1.0] tracking-tight text-ink mb-6">
+          <h5 className="font-mono">I build,</h5>
+          <em className="italic text-ink-2 font-display">design</em>,
           <br />
-          <em className="italic text-ink-2">design</em>,
-          <br />
-          and create.
+          <h5 className="font-serif">and create.</h5>
         </h1>
         <p className="text-ink-2 max-w-[34ch] leading-relaxed mb-10 font-light text-[1.05rem]">
           Fullstack developer, graphic designer, and content creator — making
@@ -36,7 +35,7 @@ export function Hero() {
 
       <div
         className="flex flex-row md:flex-col flex-wrap gap-8 md:gap-4 items-start md:items-end pt-0 md:pt-8 pb-0 md:pb-24 reveal"
-        style={{ transitionDelay: '0.15s' }}
+        style={{ transitionDelay: "0.15s" }}
       >
         {STATS.map((stat, i) => (
           <div key={stat.label} className="contents md:block">
@@ -55,5 +54,5 @@ export function Hero() {
         ))}
       </div>
     </div>
-  )
+  );
 }
